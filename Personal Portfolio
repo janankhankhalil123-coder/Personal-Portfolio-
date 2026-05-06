@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamad Ali Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:black;
+      --text:gold;
+      --card:#111;
+      --nav:rgba(0,0,0,0.6);
+    }body.light{
+  --bg:#f5f5f5;
+  --text:#222;
+  --card:white;
+  --nav:rgba(255,255,255,0.7);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:var(--bg);color:var(--text);overflow-x:hidden;transition:.4s}
+
+/* NAVBAR */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  background:var(--nav);
+  backdrop-filter:blur(10px);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:12px 25px;
+  z-index:100;
+  animation:slideDown .8s ease;
+}
+
+nav h2{font-size:18px;color:gold}
+
+nav ul{display:flex;gap:20px;list-style:none}
+
+nav ul li a{
+  text-decoration:none;
+  color:var(--text);
+  transition:.3s;
+  font-size:14px;
+}
+
+nav ul li a:hover{color:orange}
+
+.toggle{
+  padding:6px 12px;border:1px solid gold;border-radius:20px;
+  cursor:pointer;background:transparent;color:gold
+}
+
+header{
+  min-height:100vh;display:flex;justify-content:center;align-items:center;
+  gap:40px;flex-wrap:wrap;padding:80px 40px 40px;position:relative;z-index:1
+}
+
+.profile-pic{
+  width:180px;height:180px;border-radius:50%;border:3px solid gold;
+  object-fit:cover;box-shadow:0 0 25px gold;animation:zoomIn 1.5s ease
+}
+
+.intro h1{
+  font-size:3rem;
+  background:linear-gradient(90deg,gold,orange,red);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent
+}
+
+.typing{
+  font-size:1.3rem;margin-top:10px;border-right:2px solid gold;
+  white-space:nowrap;overflow:hidden;width:0;
+  animation:typing 6s steps(40,end) infinite alternate,blink .7s infinite
+}
+
+section{padding:60px 20px;text-align:center;position:relative;z-index:1}
+
+.card{background:var(--card);margin:20px auto;padding:20px;max-width:400px;border-radius:15px;box-shadow:0 0 15px rgba(212,175,55,.5);transition:.4s}
+.card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 30px gold}
+
+.skills{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin-top:20px}
+
+.skill{padding:10px 20px;border:1px solid gold;border-radius:20px;background:rgba(255,215,0,0.1);transition:.3s;cursor:pointer}
+.skill:hover{background:gold;color:black}
+
+.btns{display:flex;gap:15px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.btn{padding:10px 20px;border:1px solid gold;border-radius:25px;text-decoration:none;color:var(--text)}
+
+iframe{margin-top:20px;border:0;width:90%;height:250px;border-radius:10px}
+
+footer{text-align:center;padding:20px;background:var(--card)}
+
+/* animations */
+@keyframes typing{from{width:0}to{width:100%}}
+@keyframes blink{50%{border-color:transparent}}
+@keyframes zoomIn{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes slideDown{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}
+
+#particles{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
+
+  </style>
+</head>
+<body><!-- NAVBAR --><nav>
+  <h2>Hamad Portfolio</h2>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="toggle" onclick="toggleMode()">🌙/☀️</button>
+</nav><canvas id="particles"></canvas>
+
+<header id="home">
+  <img src="hamad.jpg" class="profile-pic">
+  <div class="intro">
+    <h1>Hamad Ali</h1>
+    <div class="typing">Student | AI Developer | Cybersecurity Learner</div>
+  </div>
+</header><section id="about">
+  <div class="card"><h2>Father Name</h2><p>Imdad Ali</p></div>
+  <div class="card"><h2>Class</h2><p>1st Year</p></div>
+  <div class="card"><h2>Matric Marks</h2><p>937</p></div>
+  <div class="card"><h2>Diploma</h2><p>D.I.T</p></div>
+  <div class="card"><h2>Typing Speed</h2><p>34 WPM</p></div>
+</section><section id="skills">
+  <h2>Languages</h2>
+  <div class="skills">
+    <div class="skill">English</div>
+    <div class="skill">Urdu</div>
+    <div class="skill">Pashto</div>
+  </div>  <h2 style="margin-top:30px">Computer Languages</h2>
+  <div class="skills">
+    <div class="skill">Python</div>
+    <div class="skill">HTML</div>
+    <div class="skill">CSS</div>
+    <div class="skill">JavaScript</div>
+  </div>
+</section><section id="contact">
+  <h2>Contact</h2>
+  <div class="skills">
+    <div class="skill" onclick="window.location.href='tel:03179518826'">📞 03179518826</div>
+    <div class="skill" onclick="window.location.href='tel:03350955663'">📞 03350955663</div>
+    <div class="skill" onclick="window.location.href='mailto:janankhankhalil123@gmail.com'">✉️ Email 1</div>
+    <div class="skill" onclick="window.location.href='mailto:hammadkhankhalil4446@gmail.com'">✉️ Email 2</div>
+  </div>  <div class="btns">
+    <a class="btn" href="https://wa.me/923179518826">WhatsApp</a>
+    <a class="btn" href="tel:03179518826">Call</a>
+    <a class="btn" href="mailto:janankhankhalil123@gmail.com">Email</a>
+  </div>  <h3>📍 Address</h3>
+  <p>Charsadda Road, Bakhshi Pul, New Ghari, Peshawar, Murad Colony</p>  <iframe src="https://maps.google.com/maps?q=Charsadda%20Road%20Bakhshi%20Pul%20Peshawar&output=embed"></iframe>
+</section><footer>
+  <p>© 2026 Hamad Ali | Portfolio</p>
+</footer><script>
+function toggleMode(){document.body.classList.toggle('light')}
+
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+let particles=[];
+
+class Particle{
+  constructor(){this.x=Math.random()*canvas.width;this.y=Math.random()*canvas.height;this.size=2;this.speedX=Math.random()*1-0.5;this.speedY=Math.random()*1-0.5}
+  update(){this.x+=this.speedX;this.y+=this.speedY}
+  draw(){ctx.fillStyle='gold';ctx.beginPath();ctx.arc(this.x,this.y,this.size,0,Math.PI*2);ctx.fill()}
+}
+
+function init(){particles=[];for(let i=0;i<120;i++)particles.push(new Particle())}
+function animate(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{p.update();p.draw()});requestAnimationFrame(animate)}
+init();animate();
+window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;init()});
+</script></body>
+</html>
